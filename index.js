@@ -16,6 +16,9 @@ app.use("/", router);
 router.post('/serverapi', (reqMsg, rspMsg) => {
     console.log("Simulator received: " + JSON.stringify(reqMsg.body));
     var packedMsg = new Object();
+    /*
+    * Define here
+    */
     if (reqMsg.body.header.msgType === 105){
         packedMsg = {
             "header": {
