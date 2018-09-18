@@ -20,16 +20,29 @@ router.post('/serverapi', (reqMsg, rspMsg) => {
     * Define here
     */
     if (reqMsg.body.header.msgType === 105){
+        //case 1
         packedMsg = {
             "header": {
                 "msgType": 106,
                 "msgLen": 0,
-                "endpointId": 4
+                "endpointId": 0
             },
             "payload": {
                 "resultCode": 0,
-                "usn": "3",
+                "usn": "4",
                 "nsc": "1"
+            }
+        }
+        // case 2
+    } else if (reqMsg.body.header.msgType === 107){
+        packedMsg = {
+            "header": {
+                "msgType": 108,
+                "msgLen": 0,
+                "endpointId": 4
+            },
+            "payload": {
+                "resultCode": 0
             }
         }
     }
